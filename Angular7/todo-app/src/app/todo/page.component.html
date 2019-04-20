@@ -22,4 +22,9 @@
       <app-view [todoList]="todoLists" (remove)="toRemove($event)" (statusChange)="toChange($event)"></app-view>
     </div>
   </div>
+  <div class="col-12 text-left">
+    <span>{{inprogressList}} / {{todoLists.length}}</span>
+    <p *ngIf="todoLists?.length > 0">NOTE * circle indicate yet to complete the task, u can make complete by clicking the circle icons. 
+        <br/>tick indicate completed task</p>
+  </div>
 </div>
