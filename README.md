@@ -16,4 +16,4 @@ npm install
 npm start
 
 2. to check the SPA app runs in port 4200
-http://localhost:3000
+http://localhost:4200
