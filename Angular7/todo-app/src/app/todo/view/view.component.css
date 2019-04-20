@@ -1,0 +1,18 @@
+a.button {
+    padding:7px 10px;
+    position:absolute;
+    top:0px;
+    left:0;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border-radius: 0.25rem;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+.list-group {
+    padding:0px 10px;
+    margin:0 10px;
+}
+li {
+    padding:10px 0px;
+}

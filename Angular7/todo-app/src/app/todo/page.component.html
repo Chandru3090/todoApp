@@ -1,0 +1,25 @@
+<div class="container">
+  <div class="jumbotron" style="padding:45px 0px">
+    <h4 class="text-center">To Do List App</h4>
+    <div class="row justify-content-end">
+      <div class="col-6 text-left">
+        <a class="pd-10" href="javascript:void(0);">Welcome {{service?.user?.userName}}</a>
+      </div>
+      <div class="col-6 text-right">
+        <a class="pd-10" href="javascript:void(0);" (click)="logOut()">Logout</a>
+      </div>
+    </div>
+  </div>
+  <div class="alert alert-success" *ngIf="alertSuccess" role="alert">
+    {{alertSuccess}}
+  </div>
+  <div class="alert alert-danger" *ngIf="alertFailure" role="alert">
+    {{alertFailure}}
+  </div>
+  <div class="row">
+    <div class="col-12">
+      <app-create (todoAdd)="createToDo($event)"></app-create>
+      <app-view [todoList]="todoLists" (remove)="toRemove($event)" (statusChange)="toChange($event)"></app-view>
+    </div>
+  </div>
+</div>

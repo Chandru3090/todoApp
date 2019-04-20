@@ -1,0 +1,36 @@
+<div class="container">
+  <h3 class="text-center">Register</h3>
+  <div class="row">
+    <div class="col-3">
+
+    </div>
+    <div class="col-6">
+      <div class="text-left">
+        <form [formGroup]="registerForm" (ngSubmit)="register()">
+          <div class="form-group">
+            <label for="exampleInputEmail1">Username</label>
+            <input type="text" class="form-control" formControlName="userName" id="exampleInputEmail1" [ngClass]="(f.userName.errors && submitted) ? 'is-invalid' : ''"
+              placeholder="Enter User name">
+            <div *ngIf="submitted && f.userName.errors" class="invalid-feedback">
+              <div *ngIf="f.userName.errors.required">User name is required</div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="exampleInputPassword1">Password</label>
+            <input type="password" class="form-control" [ngClass]="(f.password.errors && submitted) ? 'is-invalid' : ''"
+              id="exampleInputPassword1" formControlName="password" placeholder="Password">
+            <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+              <div *ngIf="f.password.errors.required">Password is required</div>
+            </div>
+          </div>
+
+          <button type="submit" class="btn btn-primary">Register</button>
+          <a class="pd-lt-10" href="javascript:void(0);" (click)="login()">LogIn</a>
+        </form>
+      </div>
+    </div>
+    <div class="col-3">
+
+    </div>
+  </div>
+</div>

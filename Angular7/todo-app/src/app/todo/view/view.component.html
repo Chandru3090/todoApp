@@ -1,0 +1,21 @@
+
+  <div class="form-group">
+    <ul class="list-group" *ngIf="todoList?.length > 0">
+      <li class="row" *ngFor="let todo of todoList">
+        <div class="col-2 pr-0 text-right">
+          <a href="javascript:void(0)" class="button" style="right:0;" (click)="toStatusChange(todo)"> <i [ngClass]="(todo.status) ? 'fas fa-check':'far fa-circle'"></i></a>
+        </div>
+        <div class="col-8" style="padding-top:5px;">
+          {{todo.title}}
+        </div>
+        <div class="col-2 pl-0 text-left">
+          <a href="javascript:void(0)" class="button" (click)="toRemove(todo._id)"> <i class="fa fa-lg fa-trash"></i></a>
+        </div>
+      </li>
+    </ul>
+    <ul class="list-group" *ngIf="todoList?.length === 0">
+        <li class="row">
+          <span class="text-center">No List available</span>
+        </li>
+      </ul>
+  </div>
