@@ -14,6 +14,7 @@ export class PageComponent implements OnInit {
   alertFailure: any;
   alertSuccess: any;
   constant = CONSTANTS;
+  inprogressList = 0;
   constructor(private service: TodoService, private router: Router) { }
 
   ngOnInit() {
@@ -71,6 +72,7 @@ export class PageComponent implements OnInit {
         this.todoLists.sort((a, b) => {
           return a.status - b.status;
         });
+        this.inprogressList = this.todoLists.filter(x => x.status).length;
       }
     }, error => {
       console.log(error);
